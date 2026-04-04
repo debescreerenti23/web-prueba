@@ -65,6 +65,73 @@
             border-radius: 8px;
         }
 
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-family: var(--font-body);
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+            margin-top: auto;
+        }
+        
+        footer p {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        #content-2 {
+            border-style: groove;
+            border-radius: 20px;
+            border-color: black;
+            margin: 0 auto;
+            width: 400px;
+            padding: 10px;
+            padding-top: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        #content-2:hover {
+            background-color: #e0fffb; /* El color que quieras al pasar el ratón */
+    
+            /* ELEVACIÓN: Movemos la tarjeta 10 píxeles hacia arriba en el eje Y */
+            transform: translateY(-10px); 
+    
+            /* SOMBRA: Añadimos una sombra para reforzar el efecto de altura */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        #content-3 {
+            border-style: groove;
+            border-radius: 20px;
+            border-color: black;
+            margin: 0 auto;
+            width: 400px;
+            padding: 10px;
+            padding-top: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            
+        }
+
+        #content-3:hover {
+            background-color: #e0fffb; /* El color que quieras al pasar el ratón */
+    
+            /* ELEVACIÓN: Movemos la tarjeta 10 píxeles hacia arriba en el eje Y */
+            transform: translateY(-10px); 
+    
+            /* SOMBRA: Añadimos una sombra para reforzar el efecto de altura */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    
+
     </style>
 </head>
 <body>
@@ -82,6 +149,18 @@
         <input type="text" id="input-content" placeholder="Inserta tu texto...">
         <button onclick="enviar()">Enviar contenido</button>
         <p id="p-text"></p>
+    </div>
+    <br>
+    <div id="content-2">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Fugiat mollitia qui impedit illum assumenda modi, dicta 
+            laudantium, repudiandae ex itaque distinctio adipisci 
+            eveniet iure sed at cumque ullam tempora cupiditate!
+        </p>
+    </div>
+    <br>
+    <div id="content-3">
+        <h3>Este es el <a href="https://www.google.es" target="_blank">buscador oficial</a></h3>
     </div>
     
     <script>
@@ -109,5 +188,6 @@
        
 
     </script>
+    <script src="footer.js"></script>
 </body>
 </html>
