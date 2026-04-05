@@ -74,10 +74,6 @@
             margin-top: 40px;
         }
 
-            
-       
-
-
             /* Creamos una clase común para las tarjetas */
         .card {
             border-style: groove;
@@ -119,6 +115,21 @@
 
         #head-text i {
             margin: 0 5px;
+        }
+        @media (max-width: 600px) {
+            #head h1 {
+                font-size: 1.5rem; /* Título adaptado a móvil]*/
+            }
+            .card {
+                width: 95%; /* Ocupar casi toda la pantalla*/
+                margin: 10px auto;
+            }
+            #head-text span {
+                font-size: 30px; /* Reducimos los iconos del párrafo*/
+            }
+            hr {
+                width: 80%;/* El hr se adapta a este tamaño*/
+            }
         }
 
     
