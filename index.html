@@ -10,11 +10,17 @@
     <style>
 
         :root {
-            background-color: rgb(187, 245, 226);
+            --bgcolor: #6ADB37;
+            --hovercolor: #FA4625;
+            --hoverbutton: #2BE0C6;
+            --footercolor: #89A3A3;
+
+
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bgcolor);
         }
 
         hr {
@@ -31,7 +37,7 @@
         }
 
         #head h1:hover {
-            color: #e71515;
+            color: var(--hovercolor);
             transform: translateY(-10px);
         }
 
@@ -39,10 +45,6 @@
             text-align: center;
         }
 
-        #head-text span {
-            font-style: oblique;
-            color: coral;
-        }
 
         /* Estilo base para elementos dentro de la card */
         .card input, 
@@ -55,12 +57,12 @@
         /* Efecto específico para el botón cuando pasamos el ratón por la TARJETA */
         /* (Opcional: el botón reacciona aunque no estés tocando el botón directamente) */
         .card:hover button {
-            border-color: aqua;
+            border-color: var(--hoverbutton);
         }
 
         /* Efecto cuando pasamos el ratón DIRECTAMENTE sobre el botón */
         .card button:hover {
-            background-color: aqua;
+            background-color: var(--hoverbutton);
             cursor: pointer;
             transform: scale(1.05); /* El botón crece un poquito */
         }
@@ -69,7 +71,7 @@
             text-align: center;
             padding: 20px;
             font-family: 'Inter', sans-serif;
-            color: #64748b;
+            color: var(--footercolor);
             border-top: 1px solid rgba(0,0,0,0.05);
             margin-top: 40px;
         }
