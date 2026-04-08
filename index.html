@@ -1,28 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pruebas</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-          
-    <style>
+<!DOCTYPE html> <!-- Indica que el documento usa HTML5 -->
+<html lang="en"> <!-- Idioma principal de la página -->
 
+<head>
+    <meta charset="UTF-8"> <!-- Permite usar caracteres especiales (tildes, ñ, etc.) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hace que la web sea responsive (se adapte a móviles) -->
+
+    <title>Pruebas</title> <!-- Título de la pestaña del navegador -->
+
+    <!-- Icono de la pestaña -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Librería de iconos (Devicon: HTML, CSS, JS) -->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <style>
+        /* Variables globales CSS (muy útil para mantener colores consistentes) */
         :root {
             --bgcolor: #6ADB37;
-            --hovercolor: #FA4625;
-            --hoverbutton: #2BE0C6;
-            --footercolor: #89A3A3;
-
-
+            --hoverbutton: #2ea794;
+            --footercolor: #2d3030;
+            --hovercard: #C1ED74;
         }
 
+        /* Estilo general del body */
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: var(--bgcolor);
         }
 
+        /* Línea decorativa */
         hr {
             border: 0;
             height: 1px;
@@ -31,42 +38,60 @@
             margin: 20px auto;
         }
 
+        /* Título principal */
         #head h1 {
             text-align: center;
-            transition: all 0.6s ease;
-        }
+            color: #fff;
 
+        /* Efecto LED (neón) */
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #6ADB37,
+                0 0 20px #6ADB37,
+                0 0 40px #6ADB37,
+                0 0 80px #6ADB37;
+
+        /* Animaciones */
+        animation: glow 1.5s ease-in-out infinite alternate,
+                float 3s ease-in-out infinite;
+}
+
+        /* Efecto hover del título */
         #head h1:hover {
-            color: var(--hovercolor);
-            transform: translateY(-10px);
+            transform: translateY(-10px); /* Se mueve hacia arriba */
         }
 
+        /* Texto debajo del título */
         #head-text {
             text-align: center;
         }
 
-
-        /* Estilo base para elementos dentro de la card */
+        /* Estilo base para inputs y botones dentro de las cards */
         .card input, 
         .card button {
             border-radius: 8px;
-            padding: 8px; /* Un poco más de espacio queda mejor */
-            transition: all 0.3s ease; /* Para que el botón también cambie suave */
+            padding: 8px;
+            transition: all 0.3s ease;
         }
 
-        /* Efecto específico para el botón cuando pasamos el ratón por la TARJETA */
-        /* (Opcional: el botón reacciona aunque no estés tocando el botón directamente) */
+        /* Cuando pasas el ratón por la tarjeta, el botón cambia borde */
         .card:hover button {
             border-color: var(--hoverbutton);
         }
 
-        /* Efecto cuando pasamos el ratón DIRECTAMENTE sobre el botón */
+        /* Hover directamente sobre el botón */
         .card button:hover {
             background-color: var(--hoverbutton);
             cursor: pointer;
-            transform: scale(1.05); /* El botón crece un poquito */
+            transform: scale(1.05); /* Se agranda un poco */
         }
 
+        /* Cambio de color al pasar por la tarjeta */
+        .card:hover {
+            background-color: var(--hovercard);
+        }
+
+        /* Estilo del footer */
         footer {
             text-align: center;
             padding: 20px;
@@ -76,7 +101,7 @@
             margin-top: 40px;
         }
 
-            /* Creamos una clase común para las tarjetas */
+        /* Estilo base de las tarjetas */
         .card {
             border-style: groove;
             border-radius: 20px;
@@ -85,33 +110,34 @@
             max-width: 400px;
             padding: 15px;
             margin: 20px auto;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Un toque de rebote */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación con rebote */
             cursor: pointer;
             text-align: center;
-            word-wrap: break-word; /* Cortar una palabra y bajarla abajo si fuera necesario*/
+            word-wrap: break-word; /* Evita que palabras largas se desborden */
         }
 
+        /* Animación al pasar el ratón */
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-
+        /* Enlaces */
         a {
             text-decoration: none;
             color: black;
-
+            font-style: italic;
         }
 
+        /* Iconos del texto */
         #head-text span {
             font-size: 30px;
-            animation: 0.5s ease;
             display: inline-block;
-            vertical-align: middle;
             cursor: pointer;
             transition: all 0.5s ease;
         }
 
+        /* Hover sobre iconos */
         #head-text span:hover {
             transform: translateY(-10px);
             filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.3));
@@ -120,86 +146,140 @@
         #head-text i {
             margin: 0 5px;
         }
+
+        /* Media query (para móviles) */
         @media (max-width: 600px) {
             #head h1 {
-                font-size: 1.5rem; /* Título adaptado a móvil]*/
+                font-size: 1.5rem;
             }
             .card {
-                width: 95%; /* Ocupar casi toda la pantalla*/
+                width: 95%;
                 margin: 10px auto;
             }
             #head-text span {
-                font-size: 30px; /* Reducimos los iconos del párrafo*/
+                font-size: 30px;
             }
             hr {
-                width: 80%;/* El hr se adapta a este tamaño*/
+                width: 80%;
             }
         }
 
-    
-        
+        /* Animación de brillo LED */
+    @keyframes glow {
+        from {
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #6ADB37,
+                0 0 20px #6ADB37,
+                0 0 40px #6ADB37;
+        }
+        to {
+            text-shadow: 
+                0 0 10px #fff,
+                0 0 20px #6ADB37,
+                0 0 40px #6ADB37,
+                0 0 80px #6ADB37;
+        }
+    }
+
+    /* Movimiento suave arriba/abajo */
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
     </style>
 </head>
+
 <body>
+
+    <!-- Cabecera -->
     <div id="head">
         <h1>UNDER CONSTRUCTION 🚧</h1>
     </div>
-    
-    <hr>
 
+    <hr> <!-- Línea separadora -->
+
+    <!-- Texto con iconos -->
     <div id="head-text">
-        <p>En esta web vamos a hacer pruebas tanto con 
-            <span><i class="devicon-html5-plain colored"></i> 
-            <i class="devicon-css3-plain colored"></i> 
-            <i class="devicon-javascript-plain colored"></i></span> 
-            Nos va a servir para aclarar conceptos de todo tipo.</p>
-    </div>
-    
-    <i class="fa-brands fa-html5"></i>
-
-    <div class="card">
-        <input type="text" id="input-content" placeholder="Inserta tu texto...">
-        <button onclick="enviar()">Enviar contenido</button>
-        <p id="p-text"></p>
-    </div>
-    <br>
-    <div class="card">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Fugiat mollitia qui impedit illum assumenda modi, dicta 
-            laudantium, repudiandae ex itaque distinctio adipisci 
-            eveniet iure sed at cumque ullam tempora cupiditate!
+        <p>Testeando aprendizaje con  
+            <span>
+                <!-- Iconos de tecnologías -->
+                <i class="devicon-html5-plain colored"></i> 
+                <i class="devicon-css3-plain colored"></i> 
+                <i class="devicon-javascript-plain colored"></i>
+            </span>
         </p>
     </div>
-    <br>
+
+    <!-- Icono extra (no funcionará si no cargas FontAwesome) -->
+    <i class="fa-brands fa-html5"></i>
+
+    <!-- Tarjeta con input -->
     <div class="card">
-        <h3>Este es el <a href="https://www.google.es" target="_blank">buscador oficial</a></h3>
+        <!-- Campo de texto -->
+        <input type="text" id="input-content" placeholder="Inserta tu texto...">
+
+        <!-- Botón que ejecuta la función enviar() -->
+        <button onclick="enviar()">Enviar contenido</button>
+
+        <!-- Aquí se mostrará el resultado -->
+        <p id="p-text"></p>
     </div>
-    
+
+    <br>
+
+    <!-- Tarjeta de texto -->
+    <div class="card">
+        <p>Lorem ipsum dolor sit amet...</p>
+    </div>
+
+    <br>
+
+    <!-- Tarjeta con enlace -->
+    <div class="card">
+        <h3>Este es el 
+            <a href="https://www.google.es" target="_blank">
+                buscador oficial
+            </a>
+        </h3>
+    </div>
+
     <script>
+        // Obtenemos el input por su ID
         let entrada = document.getElementById("input-content");
+
+        // Obtenemos el párrafo donde mostraremos el texto
         let parrafo = document.getElementById("p-text");
 
+        // Función que se ejecuta al pulsar el botón
         function enviar() {
-        // 1. Usamos .value para obtener el texto
+
+            // Guardamos el texto del input
             let mensaje = entrada.value;
 
-        // 2. Comprobamos si el mensaje (el texto) está vacío
+            // Si el campo está vacío
             if (mensaje === "") {
                 alert("Has dejado el campo vacío");
             } else {
 
-        // 3. Asignamos el texto al interior del párrafo
-            parrafo.innerText = "El texto introducido es: " + mensaje;
-        
-        //4. Limpiar el cuadro de texto después de enviar
-            entrada.value = ""; 
+                // Mostramos el texto en el párrafo
+                parrafo.innerText = "El texto introducido es: " + mensaje;
+
+                // Limpiamos el input
+                entrada.value = ""; 
             }
         }
-        
-        
-       
-
     </script>
+
+    <!-- Script footer -->
     <script src="footer.js"></script>
+
 </body>
 </html>
