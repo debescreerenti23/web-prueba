@@ -1,0 +1,181 @@
+
+/* Variables globales CSS (muy útil para mantener colores consistentes) */
+        :root {
+            --bgcolor: #6ADB37;
+            --hoverbutton: #2ea794;
+            --footercolor: #2d3030;
+            --hovercard: #C1ED74;
+        }
+
+        /* Estilo general del body */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bgcolor);
+        }
+
+        /* Línea decorativa */
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, transparent, black, transparent);
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        /* Título principal */
+        #head h1 {
+            text-align: center;
+            color: #fff;
+
+        /* Efecto LED (neón) */
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #6ADB37,
+                0 0 20px #6ADB37,
+                0 0 40px #6ADB37,
+                0 0 80px #6ADB37;
+
+        /* Animaciones */
+        animation: glow 1.5s ease-in-out infinite alternate,
+                float 3s ease-in-out infinite;
+}
+
+        /* Efecto hover del título */
+        #head h1:hover {
+            transform: translateY(-10px); /* Se mueve hacia arriba */
+        }
+
+        /* Texto debajo del título */
+        #head-text {
+            text-align: center;
+        }
+
+        /* Estilo base para inputs y botones dentro de las cards */
+        .card input, 
+        .card button {
+            border-radius: 8px;
+            padding: 8px;
+            transition: all 0.3s ease;
+        }
+
+        /* Cuando pasas el ratón por la tarjeta, el botón cambia borde */
+        .card:hover button {
+            border-color: var(--hoverbutton);
+        }
+
+        /* Hover directamente sobre el botón */
+        .card button:hover {
+            background-color: var(--hoverbutton);
+            cursor: pointer;
+            transform: scale(1.05); /* Se agranda un poco */
+        }
+
+        /* Cambio de color al pasar por la tarjeta */
+        .card:hover {
+            background-color: var(--hovercard);
+        }
+
+        /* Estilo del footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            color: var(--footercolor);
+            border-top: 1px solid rgba(0,0,0,0.05);
+            margin-top: 40px;
+        }
+
+        /* Estilo base de las tarjetas */
+        .card {
+            border-style: groove;
+            border-radius: 20px;
+            border-color: black;
+            width: 90%;
+            max-width: 400px;
+            padding: 15px;
+            margin: 20px auto;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación con rebote */
+            cursor: pointer;
+            text-align: center;
+            word-wrap: break-word; /* Evita que palabras largas se desborden */
+        }
+
+        /* Animación al pasar el ratón */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Enlaces */
+        a {
+            text-decoration: none;
+            color: black;
+            font-style: italic;
+        }
+
+        /* Iconos del texto */
+        #head-text span {
+            font-size: 30px;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        /* Hover sobre iconos */
+        #head-text span:hover {
+            transform: translateY(-10px);
+            filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.3));
+        }
+
+        #head-text i {
+            margin: 0 5px;
+        }
+
+        /* Media query (para móviles) */
+        @media (max-width: 600px) {
+            #head h1 {
+                font-size: 1.5rem;
+            }
+            .card {
+                width: 95%;
+                margin: 10px auto;
+            }
+            #head-text span {
+                font-size: 30px;
+            }
+            hr {
+                width: 80%;
+            }
+        }
+
+        /* Animación de brillo LED */
+    @keyframes glow {
+        from {
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #6ADB37,
+                0 0 20px #6ADB37,
+                0 0 40px #6ADB37;
+        }
+        to {
+            text-shadow: 
+                0 0 10px #fff,
+                0 0 20px #6ADB37,
+                0 0 40px #6ADB37,
+                0 0 80px #6ADB37;
+        }
+    }
+
+    /* Movimiento suave arriba/abajo */
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+        
