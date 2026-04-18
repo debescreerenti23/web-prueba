@@ -23,4 +23,22 @@ function enviar() {
         entrada.value = ""; 
     }
 }
+
+//Modo oscuro
+
+const boton = document.getElementById('boton-tema');
+const emoji = document.getElementById('emoji')
+
+boton.addEventListener('click', () => {
+    // Cambiamos el modo
+    document.body.classList.toggle('dark-mode');
+
+    //Comprobamos si está en modo oscuro
+    if (document.body.classList.contains('dark-mode')) {
+        emoji.textContent = "☀️"
+    } else {
+        //Si no es modo oscuro, ponemos luna de nuevo
+        emoji.textContent = "🌙"
+    }
+});
     
