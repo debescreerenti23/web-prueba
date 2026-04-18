@@ -41,32 +41,41 @@ button:hover {
     transform: scale(1.1);   /* Se hace un poco más grande al pasar el ratón */
 }
 
+#btn-send {
+    font-size: 1rem;
+    margin: 10px;
+}
 
-    /* Línea decorativa */
-    hr {
-        border: 0;
-        height: 1px;
-        background-image: linear-gradient(to right, transparent, black, transparent);
-        width: 80%;
-        margin: 20px auto;
-    }
+#btn-send:hover {
+    transform: scale(1.2);
+}
 
-    /* Título principal */
-    #head h1 {
-        text-align: center;
-        color: #fff;
 
-    /* Efecto LED (neón) */
-        text-shadow: 
-            0 0 5px #fff,
-            0 0 10px #6ADB37,
-            0 0 20px #6ADB37,
-            0 0 40px #6ADB37,
-            0 0 80px #6ADB37;
+/* Línea decorativa */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, black, transparent);
+    width: 80%;
+    margin: 20px auto;
+}
 
-    /* Animaciones */
-    animation: glow 1.5s ease-in-out infinite alternate,
-            float 3s ease-in-out infinite;
+/* Título principal */
+#head h1 {
+    text-align: center;
+    color: #fff;
+
+/* Efecto LED (neón) */
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #6ADB37,
+        0 0 20px #6ADB37,
+        0 0 40px #6ADB37,
+        0 0 80px #6ADB37;
+
+/* Animaciones */
+animation: glow 1.5s ease-in-out infinite alternate,
+        float 3s ease-in-out infinite;
 }
 
     /* Efecto hover del título */
